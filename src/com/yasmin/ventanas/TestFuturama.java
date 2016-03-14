@@ -328,7 +328,7 @@ public class TestFuturama extends javax.swing.JFrame {
                 nota++;
                 nota = (nota * 100) / 10;
                 nota1 = String.valueOf(nota);
-                f.porcentaje.setText(nota1);
+                f.porcentaje.setText(nota1+"%");
             }
         }
         try{
