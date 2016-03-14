@@ -24,7 +24,7 @@ public class Fin extends javax.swing.JFrame {
         porcentaje = new javax.swing.JLabel();
         repetir = new javax.swing.JButton();
         imagenFin = new javax.swing.JLabel();
-        fondoFin = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -48,7 +48,7 @@ public class Fin extends javax.swing.JFrame {
         porcentaje.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         porcentaje.setText("por");
         jPanel1.add(porcentaje);
-        porcentaje.setBounds(390, 160, 130, 130);
+        porcentaje.setBounds(380, 200, 130, 130);
 
         repetir.setText("Repetir test");
         repetir.addActionListener(new java.awt.event.ActionListener() {
@@ -59,9 +59,12 @@ public class Fin extends javax.swing.JFrame {
         jPanel1.add(repetir);
         repetir.setBounds(440, 440, 100, 23);
         jPanel1.add(imagenFin);
-        imagenFin.setBounds(60, 140, 250, 210);
-        jPanel1.add(fondoFin);
-        fondoFin.setBounds(0, 0, 700, 500);
+        imagenFin.setBounds(60, 160, 250, 210);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setText("Resultado");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(370, 190, 120, 30);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 581, 510);
@@ -83,8 +86,8 @@ public class Fin extends javax.swing.JFrame {
     }//GEN-LAST:event_repetirActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel fondoFin;
     public javax.swing.JLabel imagenFin;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JLabel porcentaje;
     private javax.swing.JButton repetir;
