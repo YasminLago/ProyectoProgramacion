@@ -19,16 +19,16 @@ public class Respuestas {
       "5. desde 1999 hasta 2003"
     };
     String [] opciones ={
-      "Unidad de de doblaje Bender, Bender a secas, Bender 722, Bender B. Rodriguez",
-      "Extraterrestres venidos del espacio, Mutantes, Humanos normales, Están muertos", 
-      "Triángulo, No toca ningún instrumento, Flauta del futuro, Holófonor",     
-      "Richard Nixon, George W. Bush, Bill Clinton, Fishy Joes",
-      "Fry, Kiff, Zapp Brunigan, Hermes",
-      "Hubert, Wernstrum, Cubert, Scruffy",
-      "Decapodian 7, Caca perro 6, Omicron persei 8, Tatooine",
-      "Angelina Jolie, Pamela Anderson, Sofia Loren, Lucy Liu",
-      "Ser el lider de la Tierra, Ser humorista, Ser un importante medico, Comer más de dos veces por semana",
-      "5. desde 1999 hasta 2003, 3. desde el 2000 hasta el 2002,Empezó en el 2001 y sigue emitiendose, 6. desde el 2000 hasta el 2005",
+      "Unidad de doblaje Bender,Bender a secas,Bender 722,Bender B. Rodriguez",
+      "Extraterrestres venidos del espacio,Mutantes,Humanos normales,Están muertos", 
+      "Triángulo,No toca ningún instrumento,Flauta del futuro,Holófonor",     
+      "Richard Nixon,George W. Bush,Bill Clinton,Fishy Joes",
+      "Fry,Kiff,Zapp Brunigan,Hermes",
+      "Hubert,Wernstrum,Cubert,Scruffy",
+      "Decapodian 7,Caca perro 6,Omicron persei 8,Tatooine",
+      "Angelina Jolie,Pamela Anderson,Sofia Loren,Lucy Liu",
+      "Ser el lider de la Tierra,Ser humorista,Ser un importante medico,Comer más de dos veces por semana",
+      "5. desde 1999 hasta 2003,3. desde el 2000 hasta el 2002,Empezó en el 2001 y sigue emitiendose,6. desde el 2000 hasta el 2005",
     };
     
     /**
