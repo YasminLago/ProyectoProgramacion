@@ -1,9 +1,13 @@
 package com.yasmin.ventanas;
-
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import javax.swing.ImageIcon;
 
 /**
- * Esta clase sirve para comenzar el test
+ * En esta clase comienza el test
  * @author Yasmín
  */
 public class Login extends javax.swing.JFrame {
@@ -19,6 +23,8 @@ public class Login extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         salir = new javax.swing.JButton();
         empezar = new javax.swing.JButton();
+        user = new javax.swing.JLabel();
+        userName = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -48,6 +54,14 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(empezar);
         empezar.setBounds(390, 420, 140, 23);
 
+        user.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        user.setForeground(new java.awt.Color(255, 255, 255));
+        user.setText("Jugador");
+        jPanel1.add(user);
+        user.setBounds(160, 180, 70, 40);
+        jPanel1.add(userName);
+        userName.setBounds(240, 190, 120, 20);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/yasmin/imagenes/índice.jpg"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(600, 600));
         jLabel1.setMinimumSize(new java.awt.Dimension(600, 600));
@@ -69,11 +83,24 @@ public class Login extends javax.swing.JFrame {
  */
     private void empezarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_empezarActionPerformed
         TestFuturama test= new TestFuturama();
+        Fin f = new Fin();
             test.setVisible(true);
             dispose();//Se cierra la ventana de acceso
             ImageIcon imagen1=new ImageIcon(getClass().getResource("/com/yasmin/imagenes/bender.jpg"));
             test.imagen.setIcon(imagen1);
             
+        File puntuacion = new File("puntuaciones.txt");
+            try{
+                FileWriter fw = new FileWriter(puntuacion,true);
+                BufferedWriter bw = new BufferedWriter(fw);
+                PrintWriter pr = new PrintWriter(bw);
+                String usuario=userName.getText();
+                pr.write("Jugador: "+usuario+"\r\n");
+                pr.close();
+                bw.close();
+            }catch(IOException e){
+                e.toString();
+            }
     }//GEN-LAST:event_empezarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -81,5 +108,7 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton salir;
+    private javax.swing.JLabel user;
+    public javax.swing.JTextField userName;
     // End of variables declaration//GEN-END:variables
 }
