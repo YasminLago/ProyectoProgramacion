@@ -4,6 +4,7 @@ import com.yasmin.clases.Preguntas;
 import com.yasmin.clases.Respuestas;
 import java.applet.AudioClip;
 import java.awt.Image;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -11,7 +12,6 @@ import java.io.PrintWriter;
 import java.net.URL;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 
 
 /**
@@ -56,7 +56,6 @@ public class TestFuturama extends javax.swing.JFrame {
         "/com/yasmin/imagenes/zoidberg.jpg",
         "/com/yasmin/imagenes/personajes.jpg"
     };
-
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -321,39 +320,46 @@ public class TestFuturama extends javax.swing.JFrame {
         f.setVisible(true);
         dispose();//Se cierra la ventana de test
         File puntuaciones=new File("puntuaciones.txt");
-        String nota1="";
+        String nota2;
         int nota = 0;
+        int nota1=0;
         for (int i = 0; i < 10; i++) {
-            if (seleccion[i].equals(r.getRespuesta(i))) {
+            if (seleccion[i].equals(r.getRespuesta(i))) { //Si las opciones son iguales a las respuestas correctas se suma 1 a nota1
                 nota++;
-                nota = (nota * 100) / 10;
-                nota1 = String.valueOf(nota);
-                f.porcentaje.setText(nota1+"%");
+                nota1 = nota;
+            }else //Si no nota se queda igual a nota1
+                nota=nota1;
             }
-        }
-        try{
-        //PrintWriter escribir=new PrintWriter(puntuaciones);
-        FileWriter escribir=new FileWriter(puntuaciones,true);
-        escribir.write(nota1);
-        }catch(Exception e){
-            e.toString();
-        }
-        
-        if(nota>50){
+                nota1=nota1*10;
+                nota2 = String.valueOf(nota1);
+                f.porcentaje.setText(nota2+"%");
+            
+        if(nota1>=50){ //Si nota1 es mayor o igual al 50% de respuestas acertadas se muestra una imagen y se genera un sonido
             ImageIcon imagen=new ImageIcon(getClass().getResource("/com/yasmin/imagenes/take.jpg"));
             f.imagenFin.setIcon(imagen);
             AudioClip sonido;
             sonido=java.applet.Applet.newAudioClip(getClass().getResource("/com/yasmin/sonidos/futurama_intro.wav"));
             sonido.play();
-            }else{
+        }else{
             ImageIcon imagenI=new ImageIcon(getClass().getResource("/com/yasmin/imagenes/mal.jpg"));
             f.imagenFin.setIcon(imagenI);
             AudioClip sonido2;
             sonido2=java.applet.Applet.newAudioClip(getClass().getResource("/com/yasmin/sonidos/fallo.wav"));
             sonido2.play();
         }
-        //JOptionPane.showMessageDialog(null,seleccion);
-        //JOptionPane.showMessageDialog(null,  nota);
+        
+        File puntuacion = new File("puntuaciones.txt");
+            try{
+                FileWriter fw = new FileWriter(puntuacion,true);
+                BufferedWriter bw = new BufferedWriter(fw);
+                PrintWriter pr = new PrintWriter(bw);
+                String p=f.porcentaje.getText();
+                pr.write("Puntuación: "+p+"\r\n"); 
+                pr.close();
+                bw.close();
+            }catch(IOException e){
+                e.toString();
+            }
     }//GEN-LAST:event_terminarActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
