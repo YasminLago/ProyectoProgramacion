@@ -1,4 +1,5 @@
 package com.yasmin.ventanas;
+
 /**
  * Clase que muesta el resultado final del test
  * @author Yasmín
@@ -48,7 +49,7 @@ public class Fin extends javax.swing.JFrame {
         porcentaje.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
         porcentaje.setText("por");
         jPanel1.add(porcentaje);
-        porcentaje.setBounds(380, 200, 130, 130);
+        porcentaje.setBounds(370, 200, 140, 130);
 
         repetir.setText("Repetir test");
         repetir.addActionListener(new java.awt.event.ActionListener() {
